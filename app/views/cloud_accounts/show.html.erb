@@ -1,0 +1,35 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+Current User is: <%= current_user.username %> <%= link_to 'Logout', logout_path %>
+<br><br>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Provider:</b>
+  <%= @cloud_account.provider %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @cloud_account.username %>
+</p>
+
+<p>
+  <b>Apikey:</b>
+  <%= @cloud_account.apikey %>
+</p>
+
+<p>
+  <b>Privatekey:</b>
+  <%= @cloud_account.privatekey %>
+</p>
+
+<p>
+  <b>Certificate:</b>
+  <%= @cloud_account.certificate %>
+</p>
+
+
+<%= link_to 'Edit', edit_cloud_account_path(@cloud_account) %> |
+<%= link_to 'Back', cloud_accounts_path %>

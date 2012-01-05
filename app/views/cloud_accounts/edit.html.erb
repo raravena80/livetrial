@@ -1,0 +1,11 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+Current User is: <%= current_user.username %> <%= link_to 'Logout', logout_path %>
+<br><br>
+
+<h1>Editing Cloud Account</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @cloud_account %> |
+<%= link_to 'Back', cloud_accounts_path %>

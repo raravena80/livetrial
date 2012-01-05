@@ -1,0 +1,10 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+Current User is: <%= current_user.username %> <%= link_to 'Logout', logout_path %>
+<br><br>
+
+<h1>Create a New Trial</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', trials_path %>

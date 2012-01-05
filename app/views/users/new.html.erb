@@ -1,0 +1,27 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+
+
+<h1>Sign Up</h1>  
+<h2>Users will be authenticated with SnapLogic LDAP</h2>
+<br>
+      
+    <%= form_for @user do |f| %>  
+      <% if @user.errors.any? %>  
+        <div class="error_messages">  
+          <h2>Form is invalid</h2>  
+          <ul>  
+            <% for message in @user.errors.full_messages %>  
+              <li><%= message %></li>  
+            <% end %>  
+          </ul>  
+        </div>  
+      <% end %>  
+      <div class="field">  
+        <%= f.label :username %>  
+        <%= f.text_field :username %>  
+      </div>  
+      <div class="actions"><%= f.submit %></div>  
+    <% end %>  
+
+

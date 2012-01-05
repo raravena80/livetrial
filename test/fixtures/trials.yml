@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  customername: "Ricardo Aravena"
+  customeremail: "raravena@snaplogic.com"
+  instancename: "raravena-snaplogic-com.dyn.snaplogic.com"
+  instanceid: 120000
+  imageid: 20
+  imageflavor: 1
+
+two:
+  customername: "John Schuster"
+  customeremail: "jcs@snaplogic.com"
+  instancename: "jcs-snaplogic-com.dyn.snaplogic.com"
+  instanceid: 150000
+  imageid: 20
+  imageflavor: 1

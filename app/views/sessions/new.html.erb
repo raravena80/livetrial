@@ -1,0 +1,27 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+
+   <h1>Log in to Live Trials Controller</h1>  
+
+   <% flash.each do |key, msg| %>
+     <div id="<%= key %>">
+      <p style="float:right;"><%= link_to_function 'X', "Effect.Fade('#{key}')" %></p>
+      <p><%= msg %></p>
+      <div class="clear"></div>
+    </div>
+   <% end %>
+      
+   <%= form_tag sessions_path do %>  
+     <div class="field">  
+       <%= label_tag :username %>  
+       <%= text_field_tag :username, params[:username] %>  
+     </div>  
+     <div class="field">  
+       <%= label_tag :password %>  
+       <%= password_field_tag :password %>  
+     </div>  
+     <div class="actions"><%= submit_tag "Log in" %></div>
+   <% end %>  
+
+<br>
+<%= button_to 'Create New User', new_user_path, :method => "get" %>

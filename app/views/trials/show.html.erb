@@ -1,0 +1,63 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+Current User is: <%= current_user.username %> <%= link_to 'Logout', logout_path %>
+<br><br>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Customername:</b>
+  <%= @trial.customername %>
+</p>
+
+<p>
+  <b>Customeremail:</b>
+  <%= @trial.customeremail %>
+</p>
+
+<p>
+  <b>Instancename:</b>
+  <%= @trial.instancename %>
+</p>
+
+<p>
+  <b>Instanceid:</b>
+  <%= @trial.instanceid %>
+</p>
+
+<p>
+  <b>Imageid:</b>
+  <%= @trial.imageid %>
+</p>
+
+<p>
+  <b>Imageflavor:</b>
+  <%= @trial.imageflavor %>
+</p>
+
+<p>
+  <b>IP address:</b>
+  <%= @trial.publicipaddr %>
+</p>
+
+<p>
+  <b>Cloud Account</b>
+  <%= @trial.cloudaccount %>
+</p>
+
+<p>
+  <b>Trial Password</b>
+  <%= @trial.trialpw %>
+</p>
+
+<p>
+  <b>Rackspace Password</b>
+  <%= @trial.instancepw %>
+</p>
+
+<p>
+  <b>Status</b>
+  <%= @trial.status %>
+</p>
+
+<%= link_to 'Back', trials_path %>

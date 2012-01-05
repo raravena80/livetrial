@@ -1,0 +1,50 @@
+<img src="http://www.snaplogic.com/images/common/logo.png">
+<br>
+<h1>LiveTrials</h1>
+Current User is: <%= current_user.username %> <%= link_to 'Logout', logout_path %>
+<br><br>
+
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @posts %>
+    </div>
+    <%= will_paginate @posts, :container => false %>
+</div>
+
+<br>
+
+<table border="+1">
+  <tr>
+    <th>Customer Name</th>
+    <th>Customer Email</th>
+    <th>Instance Name</th>
+    <th>IP address</th>
+    <th>Cloud Account</th>
+    <th>Expiration</th>
+    <th>Status</th>
+    <th colspan=3>Actions</th>
+  </tr>
+
+<% @trials.each do |trial| %>
+  <tr>
+    <td><%= trial.customername %></td>
+    <td><%= trial.customeremail %></td>
+    <td><%= trial.instancename %></td>
+    <td align=center><%= trial.publicipaddr %></td>
+    <td align=center><%= trial.cloudaccount %></td>
+    <td align=center><% if trial.expired? %>
+                     <font color="red">Expired</font>
+                     <% else %>
+                     <font color="green">Active</font>
+                     <% end %> </td>
+    <td align=center><%= trial.status %></td>
+    <td><%= link_to 'Show', trial %></td>
+    <td><%= link_to 'Destroy', trial, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+
+</table>
+
+<br />
+
+<%= button_to 'Create New Trial', new_trial_path, :method => "get" %>

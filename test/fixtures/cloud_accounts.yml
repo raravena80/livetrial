@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  provider: MyString
+  username: MyString
+  apikey: MyString
+  privatekey: MyString
+  certificate: MyString
+
+two:
+  provider: MyString
+  username: MyString
+  apikey: MyString
+  privatekey: MyString
+  certificate: MyString
