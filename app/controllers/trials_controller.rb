@@ -1,12 +1,7 @@
 class TrialsController < ApplicationController
   # Include the snaplogic rackspace library 
-  #require "snaplogic_rackspace"
 
-  #http_basic_authenticate_with :name => "dhh", :password => "secret", :except => :index
-
-  #before_filter :user_signed_in?
   before_filter :require_login, :session_expiry
-  #before_filter :require_login
 
   # GET /trials
   # GET /trials.xml
@@ -108,7 +103,7 @@ class TrialsController < ApplicationController
         @trial.instancename = server.name
         @trial.imageflavor = server.flavor.id
         @trial.imageid = server.imageId
-	@trial.cloudaccount = username
+        @trial.cloudaccount = username
 
         # Get the server public ip
         @trial.publicipaddr = server.addresses[:public].first
@@ -138,27 +133,27 @@ class TrialsController < ApplicationController
           case response.code
             when 200
               status = "Provisioning"
-#              response
+            # response
             when 302
               status = "Provisioning"
-#              response
-#           #else
-#              response.return!(request, result, &block)
+            # response
+            # else
+            #   response.return!(request, result, &block)
             end
         }
 
         @trial.status = status
 
         # Wait for 10 minutes
-#        sleep(500)
+        # sleep(500)
 
         # Send email to the customer specifying that their livetrial is completed
-#        begin
-#          Notifier.welcome(@trial).deliver
-#        rescue Errno::ECONNREFUSED => e
-#          logger.info "Caught exception when trying to send email" + e
-          # Catch the case where there's no sendmail in the box
-#        end
+        # begin
+        #   Notifier.welcome(@trial).deliver
+        # rescue Errno::ECONNREFUSED => e
+        #   # Catch the case where there's no sendmail in the box
+        #   logger.info "Caught exception when trying to send email" + e
+        # end
 
         # Save the parameters above returned by rackspace
         unless @trial.save
@@ -211,15 +206,14 @@ class TrialsController < ApplicationController
       @cloud_account = CloudAccount.find_by_username(username)
       apikey = @cloud_account.apikey
 
-      parameters = ["-u",username,"-a",apikey,
-                    "-C",@trial.customername,"-E",@trial.customeremail]
+      parameters = ["-u", username, "-a", apikey,
+                    "-C", @trial.customername, "-E", @trial.customeremail]
       options = SnaplogicRackspace::ParseArguments.parse(parameters)
       @livetrial = SnaplogicRackspace::LiveTrialServer.new(options)
-
       @livetrial.deletelive(@trial.instanceid)
     end
 
-    # Delete rails instance
+    # Delete object  instance
     @trial.destroy
 
     respond_to do |format|
