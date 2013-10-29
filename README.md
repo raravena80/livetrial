@@ -1,4 +1,5 @@
-== LiveTrial
+LiveTrial
+=========
 
 LiveTrial a web-application framework that manages servers
 in Rackspace Cloud. It's intended to be used in live trial
