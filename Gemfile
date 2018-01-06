@@ -30,7 +30,6 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem 'cloudservers'
-gem 'mysql'
 gem 'snaplogic_rackspace'
 gem 'net-ldap'
 # To schedule tasks
