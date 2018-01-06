@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.22.1'
 gem 'therubyracer', :require => 'v8'
 
 # Bundle edge Rails instead:
@@ -30,7 +30,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug'
 
 gem 'cloudservers'
-#gem 'snaplogic_rackspace'
+gem 'snaplogic_rackspace'
 gem 'net-ldap'
 # To schedule tasks
 gem 'rufus-scheduler'
